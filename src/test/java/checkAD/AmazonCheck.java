@@ -46,7 +46,7 @@ public class AmazonCheck {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Amazon Shopping");
 		el1.click();
-		TimeUnit.SECONDS.sleep(5);
+		TimeUnit.SECONDS.sleep(10);
 		int i=0;
 		while(i<5) {
 			(new TouchAction(driver))
