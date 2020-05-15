@@ -1,4 +1,4 @@
-package appiumTest;
+package interactions;
 
 public class MainTest {
 	

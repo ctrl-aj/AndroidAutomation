@@ -1,4 +1,4 @@
-package appiumTest;
+package interactions;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -12,11 +12,11 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class LinkedinTest {
+public class TripadvisorTest {
 
 	static AppiumDriver<MobileElement> driver;
 	
-	public LinkedinTest() {
+	public TripadvisorTest() {
 		
 	}
 	
@@ -24,7 +24,7 @@ public class LinkedinTest {
 		
 		try {
 			launchTest();
-			System.out.println("Test Linkedin eseguito correttamente");
+			System.out.println("Test TripAdvisor eseguito correttamente");
 		}
 		
 		catch(Exception e) {
@@ -43,21 +43,26 @@ public class LinkedinTest {
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AppiumDriver<MobileElement>(url,cap);
 		
-		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("LinkedIn");
+		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Tripadvisor");
 		el1.click();
-		TimeUnit.SECONDS.sleep(20);
-		MobileElement el2 = (MobileElement) driver.findElementById("com.linkedin.android:id/search_bar_text");
+		TimeUnit.SECONDS.sleep(15);
+		MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]");
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
-		MobileElement el3 = (MobileElement) driver.findElementById("com.linkedin.android:id/search_bar_text");
-		el3.sendKeys("salvini");
+		MobileElement el3 = (MobileElement) driver.findElementById("com.tripadvisor.tripadvisor:id/picker_typeahead");
+		el3.sendKeys("barcellona");
 		TimeUnit.SECONDS.sleep(10);
-		MobileElement el4 = (MobileElement) driver.findElementById("com.linkedin.android:id/search_typeahead_see_all_button");
+		MobileElement el4 = (MobileElement) driver.findElementById("com.tripadvisor.tripadvisor:id/airport_title");
 		el4.click();
 		TimeUnit.SECONDS.sleep(10);
-		MobileElement el5 = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Filtra per Gruppi\"]/android.widget.LinearLayout/android.widget.TextView");
+		MobileElement el5 = (MobileElement) driver.findElementById("com.tripadvisor.tripadvisor:id/search_flights_button");
 		el5.click();
+		
+		
 		
 	}
 
 }
+
+
+

@@ -1,4 +1,4 @@
-package appiumTest;
+package interactions;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -12,11 +12,11 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class TalkingtomTest {
+public class YoutubeTest {
 
 	static AppiumDriver<MobileElement> driver;
 	
-	public TalkingtomTest() {
+	public YoutubeTest() {
 		
 	}
 	
@@ -24,7 +24,7 @@ public class TalkingtomTest {
 		
 		try {
 			launchTest();
-			System.out.println("Test TalkingTom eseguito correttamente");
+			System.out.println("Test Youtube eseguito correttamente");
 		}
 		
 		catch(Exception e) {
@@ -43,22 +43,16 @@ public class TalkingtomTest {
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AppiumDriver<MobileElement>(url,cap);
 		
-
-
-		MobileElement el = (MobileElement) driver.findElementByAccessibilityId("Il Mio Tom 2");
-		el.click();
-		TimeUnit.SECONDS.sleep(30);
-		(new TouchAction(driver)).tap(PointOption.point(752, 123)).perform();
+		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("YouTube");
+		el1.click();
 		TimeUnit.SECONDS.sleep(10);
-		(new TouchAction(driver)).tap(PointOption.point(746, 128)).perform();
+		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("Cerca");
+		el2.click();
 		TimeUnit.SECONDS.sleep(10);
-		(new TouchAction(driver)).tap(PointOption.point(742, 56)).perform();
-
-		
-		
+		MobileElement el3 = (MobileElement) driver.findElementById("com.google.android.youtube:id/search_edit_text");
+		el3.sendKeys("gatti");
+		TimeUnit.SECONDS.sleep(10);
+		(new TouchAction(driver)).tap(PointOption.point(736, 1051)).perform();
 	}
 
 }
-
-
-
