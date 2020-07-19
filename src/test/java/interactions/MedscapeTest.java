@@ -49,13 +49,13 @@ public class MedscapeTest {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Medscape");
 		el1.click();
-		TimeUnit.SECONDS.sleep(10);
+		TimeUnit.SECONDS.sleep(30);
 		
 		MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.TextView");
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el3 = (MobileElement) driver.findElementById("com.medscape.android:id/search_src_text");
-		el3.sendKeys("covid");
+		el3.sendKeys("back pain");
 		TimeUnit.SECONDS.sleep(10);
 		(new TouchAction(driver)).tap(PointOption.point(739, 1054)).perform();
 		TimeUnit.SECONDS.sleep(10);

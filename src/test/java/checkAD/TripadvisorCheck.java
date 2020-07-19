@@ -41,7 +41,7 @@ public class TripadvisorCheck {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Tripadvisor");
 		el1.click();
-		TimeUnit.SECONDS.sleep(20);
+		TimeUnit.SECONDS.sleep(35);
 		
 		(new TouchAction(driver)).tap(PointOption.point(373, 741)).perform();
 

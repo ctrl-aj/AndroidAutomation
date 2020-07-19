@@ -52,7 +52,7 @@ public class MedscapeCheck {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Medscape");
 		el1.click();
-		TimeUnit.SECONDS.sleep(10);
+		TimeUnit.SECONDS.sleep(35);
 		String output="";
 		ArrayList<MobileElement> list = (ArrayList<MobileElement>) driver.findElementsByClassName("android.widget.TextView");
 		for(int j=0;j<list.size();j++) {

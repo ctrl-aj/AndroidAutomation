@@ -48,14 +48,14 @@ public class ChromeTest {
 		TimeUnit.SECONDS.sleep(15);
 		MobileElement el2 = (MobileElement) driver.findElementById("com.android.chrome:id/search_box_text");
 		el2.click();
-		TimeUnit.SECONDS.sleep(10);
+		TimeUnit.SECONDS.sleep(5);
 		MobileElement el3 = (MobileElement) driver.findElementById("com.android.chrome:id/search_box_text");
-		el3.sendKeys("salvini");
-		TimeUnit.SECONDS.sleep(10);
+		el3.sendKeys("gay");
+		TimeUnit.SECONDS.sleep(5);
 		(new TouchAction(driver)).tap(PointOption.point(734, 1051)).perform();
 		TimeUnit.SECONDS.sleep(10);
 		try {
-			MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[7]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View");
+			MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[7]/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View[1]/android.view.View");
 			el4.click();
 		}
 		catch(Exception e) {

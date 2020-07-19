@@ -55,12 +55,10 @@ public class AmazonTest {
 		el4.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el5 = (MobileElement) driver.findElementById("com.amazon.mShop.android.shopping:id/query_entry_autocomplete_text_view");
-		el5.sendKeys("attrezzi");
+		el5.sendKeys("crocchette pollo");
 		(new TouchAction(driver)).tap(PointOption.point(734, 1051)).perform();
 		TimeUnit.SECONDS.sleep(10);
-		MobileElement el6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ViewAnimator/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]");
-		el6.click();
-		TimeUnit.SECONDS.sleep(10);
+		(new TouchAction(driver)).tap(PointOption.point(142, 600)).perform();
 		
 		
 	}

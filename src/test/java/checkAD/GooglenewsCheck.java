@@ -42,40 +42,40 @@ public class GooglenewsCheck {
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("News");
 		el1.click();
 		TimeUnit.SECONDS.sleep(10);
-		ArrayList<String> output = new ArrayList<String>();
+		
+		
+		String output ="";
 		int i=0;
+		
 		while(i<5) {
-			ArrayList<MobileElement> titoli = (ArrayList<MobileElement>) driver.findElementsById("com.google.android.apps.magazines:id/title");
-			for(int j=0;j<titoli.size();j++) {
-				output.add(titoli.get(j).getText());
-				System.out.println(titoli.get(j).getText());
-			}
-			(new TouchAction(driver))
-			  .press(PointOption.point(42,1138))
-			  .moveTo(PointOption.point(37,114))
-			  .release()
-			  .perform();
+			output += driver.getPageSource();
 			(new TouchAction(driver))
 			  .press(PointOption.point(42,1138))
 			  .moveTo(PointOption.point(37,114))
 			  .release()
 			  .perform();
 			i++;
-		}  
-		
-		String outputString = "";
-		for(int j=0;j<output.size();j++) {
-			outputString+=output.get(i);
+			TimeUnit.SECONDS.sleep(5);
 		}
+		System.out.println("Terminato controllo app");
 		
-		
+		String[] outputArray= output.split("\n");
+		String outputFinale = "";
+		for(int j=0;j<outputArray.length;j++) {
+			if(outputArray[j].contains("text=")) {
+				outputFinale+=outputArray[j] + "\n";
+			}
+		}
+			
 		File outputCode = new File("/home/antonio/Desktop/GoogleNews.txt");
 		FileWriter fr = new FileWriter(outputCode, true);
 		BufferedWriter br = new BufferedWriter(fr);
-		br.write(outputString);
+		br.write(outputFinale);
 		br.close();
 		fr.close();
-		System.out.println("Articoli Google News Scaricati");
+		System.out.println("Articoli News scaricati");
+		
+			
 		
 	}
 

@@ -44,8 +44,9 @@ public class InstagramTest {
 		driver = new AppiumDriver<MobileElement>(url,cap);
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Instagram");
-		el1.click();
-		TimeUnit.SECONDS.sleep(15);
+		el1.click();	
+		TimeUnit.SECONDS.sleep(20);
+		/*
 		(new TouchAction(driver))
 		  .press(PointOption.point(398,778))
 		  .moveTo(PointOption.point(402,632))
@@ -55,6 +56,7 @@ public class InstagramTest {
 		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("Mi piace");
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
+		*/
 		MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Cerca ed esplora");
 		el3.click();
 		TimeUnit.SECONDS.sleep(10);
@@ -62,7 +64,7 @@ public class InstagramTest {
 		el4.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el5 = (MobileElement) driver.findElementById("com.instagram.android:id/action_bar_search_edit_text");
-		el5.sendKeys("gym");
+		el5.sendKeys("#omosessuale");
 		TimeUnit.SECONDS.sleep(10);
 		(new TouchAction(driver)).tap(PointOption.point(736, 1051)).perform();
 		TimeUnit.SECONDS.sleep(10);

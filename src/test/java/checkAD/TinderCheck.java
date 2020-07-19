@@ -48,16 +48,21 @@ public class TinderCheck {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Tinder");
 		el1.click();
-		TimeUnit.SECONDS.sleep(15);
+		TimeUnit.SECONDS.sleep(35);
 		MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.ImageView");
 		
-		String pageSource = driver.getPageSource();
 		MobileElement el3 = null;
 		MobileElement el4 = null;
+		MobileElement el5 = null;
 		
-		while(el3==null && el4==null) {
-			el2.click();
-			TimeUnit.SECONDS.sleep(5);
+		while(el3==null && el4==null && el5==null) {	
+			
+			try {
+				el5 = driver.findElementById("com.tinder:id/fan_ad_media_view");
+			}
+			catch(Exception e) {
+				el5 = null;
+			}
 			
 			try {
 				el3 = driver.findElementById("com.tinder:id/loading_button_text");
@@ -73,7 +78,10 @@ public class TinderCheck {
 			catch(Exception e) {
 				el4=null;
 			}
+			el2.click();
+			TimeUnit.SECONDS.sleep(5);
 		}
+		
 		if(el3!=null) {
 			el2.click();
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -81,10 +89,16 @@ public class TinderCheck {
 			System.out.println("Screenshoot eseguito");
 			driver.closeApp();
 		}
+		if(el5!=null) {
+			el2.click();
+			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("/home/antonio/Desktop/Tinder2.png"));
+			System.out.println("Screenshoot eseguito");
+			driver.closeApp();
+		}
 		if(el4!=null) {
 			driver.closeApp();
 		}
-		
 		
 	}
 	

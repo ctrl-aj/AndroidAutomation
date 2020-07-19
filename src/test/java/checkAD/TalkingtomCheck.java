@@ -42,8 +42,8 @@ public class TalkingtomCheck {
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Il Mio Tom 2");
 		el1.click();
 		TimeUnit.SECONDS.sleep(30);
-		(new TouchAction(driver)).tap(PointOption.point(747, 128)).perform();
-		TimeUnit.SECONDS.sleep(20);
+		//(new TouchAction(driver)).tap(PointOption.point(747, 128)).perform();
+		//TimeUnit.SECONDS.sleep(20);
 		
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("/home/antonio/Desktop/TalkingTom1.png"));

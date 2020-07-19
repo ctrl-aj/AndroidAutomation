@@ -49,7 +49,7 @@ public class InstagramCheck {
 		TimeUnit.SECONDS.sleep(10);
 		String output ="";
 		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\"Sponsorizzato\"));");
-		TimeUnit.SECONDS.sleep(3);
+		TimeUnit.SECONDS.sleep(10);
 		ArrayList<MobileElement> list = (ArrayList<MobileElement>) driver.findElementsByClassName("android.widget.TextView");
 		for(int j=0;j<list.size();j++) {
 			output +=list.get(j).getText()+"\n";
@@ -69,13 +69,13 @@ public class InstagramCheck {
 		  .release()
 		  .perform();
 		
-		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\"Sponsorizzato\"));");
+	/*	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\"Sponsorizzato\"));");
 		TimeUnit.SECONDS.sleep(3);
 		ArrayList<MobileElement> list2 = (ArrayList<MobileElement>) driver.findElementsByClassName("android.widget.TextView");
 		for(int j=0;j<list2.size();j++) {
-			output +=list.get(j).getText()+"\n";
+			output +=list2.get(j).getText()+"\n";
 		}
-		
+		*/
 		File outputCode = new File("/home/antonio/Desktop/Instagram.txt");
 		FileWriter fr = new FileWriter(outputCode, true);
 		BufferedWriter br = new BufferedWriter(fr);

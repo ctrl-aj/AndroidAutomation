@@ -43,21 +43,19 @@ public class LinkedinTest {
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AppiumDriver<MobileElement>(url,cap);
 		
+		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("LinkedIn");
 		el1.click();
 		TimeUnit.SECONDS.sleep(20);
+		(new TouchAction(driver)).tap(PointOption.point(715, 1198)).perform();
 		MobileElement el2 = (MobileElement) driver.findElementById("com.linkedin.android:id/search_bar_text");
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el3 = (MobileElement) driver.findElementById("com.linkedin.android:id/search_bar_text");
-		el3.sendKeys("salvini");
+		el3.sendKeys("informatica analisi dei dati");
 		TimeUnit.SECONDS.sleep(10);
-		MobileElement el4 = (MobileElement) driver.findElementById("com.linkedin.android:id/search_typeahead_see_all_button");
-		el4.click();
-		TimeUnit.SECONDS.sleep(10);
-		MobileElement el5 = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Filtra per Gruppi\"]/android.widget.LinearLayout/android.widget.TextView");
-		el5.click();
-		
+		(new TouchAction(driver)).tap(PointOption.point(738, 1053)).perform();
+
 	}
 
 }

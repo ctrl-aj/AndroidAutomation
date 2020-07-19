@@ -52,6 +52,7 @@ public class FacebookTest {
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Facebook");
 		el1.click();
 		TimeUnit.SECONDS.sleep(15);
+		/*
 		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("Crea un post su Facebook");
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
@@ -61,22 +62,23 @@ public class FacebookTest {
 		MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("PUBBLICA");
 		el4.click();
 		TimeUnit.SECONDS.sleep(10);
+		*/
 		MobileElement el5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.EditText");
 		el5.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.EditText");
-		el6.sendKeys("salvini");
+		el6.sendKeys("okitask");
 		TimeUnit.SECONDS.sleep(10);
 		(new TouchAction(driver)).tap(PointOption.point(738, 1054)).perform();
 		TimeUnit.SECONDS.sleep(10);
-		
+		/*
 		MobileElement el7 = (MobileElement) driver.findElementByAccessibilityId("GRUPPI");
 		el7.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el8 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]");
 		el8.click();
 		TimeUnit.SECONDS.sleep(10);
-		
+		*/
 		new TouchAction(driver).press(PointOption.point(526,2213)).moveTo(PointOption.point(534,1664)).release().perform();
 		
 	}

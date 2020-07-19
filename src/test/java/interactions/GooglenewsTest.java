@@ -46,12 +46,12 @@ public class GooglenewsTest {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("News");
 		el1.click();
-		TimeUnit.SECONDS.sleep(15);
+		TimeUnit.SECONDS.sleep(20);
 		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("Cerca");
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el3 = (MobileElement) driver.findElementById("com.google.android.apps.magazines:id/open_search_view_edit_text");
-		el3.sendKeys("COVID");
+		el3.sendKeys("lavoro informatica linkedin");
 		TimeUnit.SECONDS.sleep(10);
 		(new TouchAction(driver)).tap(PointOption.point(731, 1053)).perform();
 		

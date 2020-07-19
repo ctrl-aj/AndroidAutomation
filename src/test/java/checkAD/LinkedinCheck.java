@@ -54,10 +54,10 @@ public class LinkedinCheck {
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("LinkedIn");
 		el1.click();
 		String output ="";
-		TimeUnit.SECONDS.sleep(5);
+		TimeUnit.SECONDS.sleep(20);
 		
 		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\"sponsorizzato\"));");
-		TimeUnit.SECONDS.sleep(5);
+		TimeUnit.SECONDS.sleep(10);
 		ArrayList<MobileElement> list = (ArrayList<MobileElement>) driver.findElementsByClassName("android.widget.TextView");
 		for(int j=0;j<list.size();j++) {
 			output +=list.get(j).getText()+"\n";

@@ -64,7 +64,7 @@ public class AmazonCheck {
 		MobileElement el4 = (MobileElement) driver.findElementById("com.amazon.mShop.android.shopping:id/query_entry_autocomplete_text_view");
 		el4.click();
 		TimeUnit.SECONDS.sleep(5);
-		MobileElement el5 = (MobileElement) driver.findElementById("com.amazon.mShop.android.shopping:id/query_entry_autocomplete_text_view");
+		/*MobileElement el5 = (MobileElement) driver.findElementById("com.amazon.mShop.android.shopping:id/query_entry_autocomplete_text_view");
 		el5.sendKeys("attrezzi");
 		TimeUnit.SECONDS.sleep(5);
 		MobileElement el6 = (MobileElement) driver.findElementById("com.amazon.mShop.android.shopping:id/query_entry_autocomplete_text_view");
@@ -86,7 +86,7 @@ public class AmazonCheck {
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("/home/antonio/Desktop/Amazon6.png"));
 		System.out.println("Screenshoot eseguito");
-		
+		*/
 		
 	}
 	

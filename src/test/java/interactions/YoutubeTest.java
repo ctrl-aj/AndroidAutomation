@@ -50,9 +50,10 @@ public class YoutubeTest {
 		el2.click();
 		TimeUnit.SECONDS.sleep(10);
 		MobileElement el3 = (MobileElement) driver.findElementById("com.google.android.youtube:id/search_edit_text");
-		el3.sendKeys("gatti");
+		el3.sendKeys("monge natural superpremium");
 		TimeUnit.SECONDS.sleep(10);
 		(new TouchAction(driver)).tap(PointOption.point(736, 1051)).perform();
+		(new TouchAction(driver)).tap(PointOption.point(107, 147)).perform();
 	}
 
 }

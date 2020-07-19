@@ -53,27 +53,29 @@ public class YoutubeCheck {
 		
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("YouTube");
 		el1.click();
+		TimeUnit.SECONDS.sleep(10);
 		
-		TimeUnit.SECONDS.sleep(5);
-		String pageSource = driver.getPageSource();
+		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("Cerca");
+		el2.click();
+		TimeUnit.SECONDS.sleep(10);
 		
-		if(pageSource.contains("resource-id=\"com.google.android.youtube:id/ad_attribution\"")) {
-			ArrayList<MobileElement> list = (ArrayList<MobileElement>) driver.findElementsByClassName("android.widget.TextView");
-			String output ="";
-			for(int i=0;i<list.size();i++) {
-				output+=list.get(i).getText();
-			}
-			File outputCode = new File("/home/antonio/Desktop/Youtube.txt");
-			FileWriter fr = new FileWriter(outputCode, true);
-			BufferedWriter br = new BufferedWriter(fr);
-			br.write(output);
-			br.close();
-			fr.close();
-			System.out.println("Codice Scaricato");
-		}
-		else {
-			System.out.println("Codice non Scaricato");
-		}
+		MobileElement el3 = (MobileElement) driver.findElementById("com.google.android.youtube:id/search_edit_text");
+		el3.sendKeys("breaking italy ronde");
+		TimeUnit.SECONDS.sleep(10);
+		
+		(new TouchAction(driver)).tap(PointOption.point(736, 1051)).perform();
+		TimeUnit.SECONDS.sleep(10);
+		
+		(new TouchAction(driver)).tap(PointOption.point(111, 111)).perform();
+		TimeUnit.SECONDS.sleep(10);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("/home/antonio/Desktop/Youtube1.png"));
+		System.out.println("Screenshoot eseguito");
+		
+		TimeUnit.SECONDS.sleep(10);
+		File scrFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile1, new File("/home/antonio/Desktop/Youtube2.png"));
+		System.out.println("Screenshoot eseguito");
 		
 	}
 
